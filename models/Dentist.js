@@ -37,4 +37,4 @@ DentistSchema.pre('deleteOne',{document: true,query:false}, async function(next)
 });
 
 
-module.exports=mongoose.model('dentist',DentistSchema);
+module.exports=mongoose.model('Dentist',DentistSchema);
