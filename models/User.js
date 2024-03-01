@@ -50,7 +50,7 @@ UserSchema.methods.matchPassword = function(enteredpassword){
     return bcrypt.compare(enteredpassword,this.password);
 }
 
-UserSchema.methods.getSignedJwtoken = function(){
+UserSchema.methods.getSignedJwtToken = function(){
     const token = jwt.sign({id:this._id,name:this.name},process.env.JWT_SECRET,{
       expiresIn:process.env.JWT_EXPIRE
     });
