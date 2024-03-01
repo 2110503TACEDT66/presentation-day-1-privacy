@@ -1,4 +1,4 @@
-const Dentist = require('../models/Dentists');
+const Dentist = require('../models/Dentist');
 
 //@desc      Get all dentists
 //@router    GET /api/v1/dentists
