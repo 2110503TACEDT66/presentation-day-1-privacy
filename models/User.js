@@ -30,6 +30,8 @@ const UserSchema = mongoose.Schema({
     tel: {
         type: String,
         required: [true, "Please add a tel"],
+        minlength: [10,"tel must be have 10 digits"],
+        maxlength: [10,"tel must be have 10 digits"]
         
     },
     
