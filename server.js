@@ -27,7 +27,7 @@ app.use('/api/v1/dentists', dentists);
 app.use('/api/v1/auth', auth);
 app.use('/api/v1/appointments', appointments);
 
-const PORT = process.env.PORT || 5050;
+const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT,console.log('Server running in ',process.env.PORT,' mode on port ',PORT));
 
 //Handle unhandled promise rejections
