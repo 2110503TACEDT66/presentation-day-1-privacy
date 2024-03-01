@@ -35,7 +35,7 @@ exports.login= async(req,res,next)=>{
         const isMatch = await user.matchPassword(password);
         
         if(!isMatch){
-            return res.status(400).json({success:false, 
+            return res.status(401).json({success:false, 
                     msg:'Invalid credentials'});
         }
         sendTokenResponse(user,200,res)
@@ -48,11 +48,15 @@ exports.login= async(req,res,next)=>{
 }
 
 exports.getMe = async (req,res,next)=>{
-    const user = await User.findById(req.user.id);
-    res.status(200).json({
-        success:true,
-        data:user
-    })
+    try {
+        const user = await User.findById(req.user.id);
+        res.status(200).json({
+            success:true,
+            data:user
+        })
+    } catch (error) {
+        res.status(500).json({ success: false, msg: "Server Error" });
+    }
 }
 
 exports.logout = async(req,res,next)=>{
