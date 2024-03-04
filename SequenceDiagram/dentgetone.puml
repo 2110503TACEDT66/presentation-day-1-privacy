@@ -11,7 +11,7 @@ participant "<<controllers>>\n:dentists" as controllersDentists
 participant "<<model>>\n:Dentist" as modelDentists
 database "<<MongoDB>>\n:dentists" as DentistsDatabase
 
-client->server ++:req.get('/:id')
+client->server ++:req.get('/api/v1/dentists/:id')
 server->routerDentists ++:app.use('/api/v1/dentists',dentists)
 routerDentists -> controllersDentists ++:getDentist()
 controllersDentists->modelDentists ++:findById(req.params.id)

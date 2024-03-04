@@ -11,7 +11,7 @@ participant "<<controllers>>\n:appointments" as controllersAppointments
 participant "<<model>>\n:Appointment" as modelAppointments
 database "<<MongoDB>>\n:appointments" as AppointmentsDatabase
 
-client->server ++:req.get('/:id')
+client->server ++:req.get('/api/v1/appointments/:id')
 server->routerAppointments ++:app.use('/api/v1/appointments',appointments)
 routerAppointments -> controllersAppointments ++:getAppointment()
 controllersAppointments->modelAppointments ++:findById(req.params.id)
