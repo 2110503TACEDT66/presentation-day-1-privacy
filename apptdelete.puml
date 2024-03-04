@@ -1,8 +1,8 @@
-@startuml Manage Booking (GET ONE)
+@startuml Manage Booking (DELETE)
 
 header Booking Sequence Diagram
 footer Page %page% of %lastpage%
-title "Manage Booking (GET ONE)"
+title "Manage Booking (DELETE)"
 
 participant "Client" as client
 participant "<<javaScript>>\n:server" as server
@@ -11,10 +11,10 @@ participant "<<controllers>>\n:appointments" as controllersAppointments
 participant "<<model>>\n:Appointment" as modelAppointments
 database "<<MongoDB>>\n:appointments" as AppointmentsDatabase
 
-client->server ++:req.get('/:id')
+client->server ++:req.delete('/:id')
 server->routerAppointments ++:app.use('/api/v1/appointments',appointments)
-routerAppointments -> controllersAppointments ++:getAppointment()
-controllersAppointments->modelAppointments ++:findById(req.params.id)
+routerAppointments -> controllersAppointments ++:deleteAppointment()
+controllersAppointments->modelAppointments ++:findByIdAndDelete(req.params.id)
 modelAppointments ->AppointmentsDatabase ++:AppointmentSchema
 AppointmentsDatabase --> modelAppointments --:appointment
 controllersAppointments <-- modelAppointments --:appointment

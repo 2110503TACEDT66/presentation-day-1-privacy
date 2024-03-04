@@ -1,4 +1,4 @@
-@startuml Manage Booking (GET ALL)
+@startuml Manage Booking (PUT)
 
 header Booking Sequence Diagram
 footer Page %page% of %lastpage%
