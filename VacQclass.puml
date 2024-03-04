@@ -1,4 +1,4 @@
-@startuml
+@startuml DentistBooking Class UML
 left to right direction
 package "DentistBooking"{
     class "<<Application>>\nDentistBooking" as DentistBookingService{}
