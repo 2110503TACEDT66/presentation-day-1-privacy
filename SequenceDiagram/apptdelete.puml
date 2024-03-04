@@ -1,8 +1,8 @@
-@startuml Manage Booking (DELETE)
+@startuml Manage Appointment (DELETE)
 
-header Booking Sequence Diagram
+header Appointment Sequence Diagram
 footer Page %page% of %lastpage%
-title "Manage Booking (DELETE)"
+title "Manage Appointment (DELETE)"
 
 participant "Client" as client
 participant "<<javaScript>>\n:server" as server

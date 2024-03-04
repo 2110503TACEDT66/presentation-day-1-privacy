@@ -1,8 +1,8 @@
-@startuml Manage CoWorkingSpace (DELETE)
+@startuml Manage Dentist (DELETE)
 
-header CoWorkingSpace Sequence Diagram
+header Dentist Sequence Diagram
 footer Page %page% of %lastpage%
-title "Manage CoWorkingSpace (DELETE)"
+title "Manage Dentist (DELETE)"
 
 participant "Client" as client
 participant "<<javaScript>>\n:server" as server

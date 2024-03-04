@@ -1,8 +1,8 @@
-@startuml Manage Booking (PUT)
+@startuml Manage Appointment (PUT)
 
-header Booking Sequence Diagram
+header Appointment Sequence Diagram
 footer Page %page% of %lastpage%
-title "Manage Booking (PUT)"
+title "Manage Appointment (PUT)"
 
 participant "Client" as client
 participant "<<javaScript>>\n:server" as server

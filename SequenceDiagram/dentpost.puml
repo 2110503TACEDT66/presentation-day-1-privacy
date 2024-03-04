@@ -1,8 +1,8 @@
-@startuml Manage CoWorkingSpace (POST)
+@startuml Manage Dentist (POST)
 
-header CoWorkingSpace Sequence Diagram
+header Dentist Sequence Diagram
 footer Page %page% of %lastpage%
-title "Manage CoWorkingSpace (POST)"
+title "Manage Dentist (POST)"
 
 participant "Client" as client
 participant "<<javaScript>>\n:server" as server

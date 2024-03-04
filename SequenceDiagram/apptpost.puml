@@ -1,8 +1,8 @@
-@startuml Manage Booking (POST)
+@startuml Manage Appointment (POST)
 
-header Booking Sequence Diagram
+header Appointment Sequence Diagram
 footer Page %page% of %lastpage%
-title "Manage Booking (POST)"
+title "Manage Appointment (POST)"
 
 participant "Client" as client
 participant "<<javaScript>>\n:server" as server

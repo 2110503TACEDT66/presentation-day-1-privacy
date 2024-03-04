@@ -1,8 +1,8 @@
-@startuml Manage CoWorkingSpace (GET ALL)
+@startuml Manage Dentist (GET ALL)
 
-header CoWorkingSpace Sequence Diagram
+header Dentist Sequence Diagram
 footer Page %page% of %lastpage%
-title "Manage CoWorkingSpace (GET ALL)"
+title "Manage Dentist (GET ALL)"
 
 participant "Client" as client
 participant "<<javaScript>>\n:server" as server

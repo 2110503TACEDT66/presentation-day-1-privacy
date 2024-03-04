@@ -1,8 +1,8 @@
-@startuml Manage CoWorkingSpace (PUT)
+@startuml Manage Dentist (PUT)
 
-header CoWorkingSpace Sequence Diagram
+header Dentist Sequence Diagram
 footer Page %page% of %lastpage%
-title "Manage CoWorkingSpace (PUT)"
+title "Manage Dentist (PUT)"
 
 participant "Client" as client
 participant "<<javaScript>>\n:server" as server
