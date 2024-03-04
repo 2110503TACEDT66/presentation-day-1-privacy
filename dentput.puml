@@ -1,0 +1,23 @@
+@startuml Manage CoWorkingSpace (PUT)
+
+header CoWorkingSpace Sequence Diagram
+footer Page %page% of %lastpage%
+title "Manage CoWorkingSpace (PUT)"
+
+participant "Client" as client
+participant "<<javaScript>>\n:server" as server
+participant "<<router>>\n:dentists" as routerDentists
+participant "<<controllers>>\n:dentists" as controllersDentists
+participant "<<model>>\n:Dentist" as modelDentists
+database "<<MongoDB>>\n:dentists" as DentistsDatabase
+
+client->server ++:req.put('/:id')
+server->routerDentists ++:app.use('/api/v1/dentists',dentists)
+routerDentists -> controllersDentists ++:updateDentist()
+controllersDentists->modelDentists ++:findByIdAndUpdate(req.params.id, req.body)
+modelDentists ->DentistsDatabase ++:DentistSchema
+DentistsDatabase --> modelDentists --:dentist
+controllersDentists <-- modelDentists --:dentist
+controllersDentists->client --:response
+
+@enduml
