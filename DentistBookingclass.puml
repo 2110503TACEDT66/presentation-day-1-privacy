@@ -51,7 +51,7 @@ package "DentistBooking"{
     }
 
     class "<<Resource>>\nLogout" as ResourceLogout{
-        <<GET>> +logout():User
+        <<GET>> +logout():void
     }
 
     class "<<Resource>>\nGetMe" as ResourceMe{
@@ -59,9 +59,10 @@ package "DentistBooking"{
     }
 
     class "<<Representation>>\nUser" as RepresentationUser {
-        -apptDate
-        -userId
-        -Dentist
+        -name
+        -email
+        -role
+        -tel
     }
 }
 
@@ -78,13 +79,12 @@ RepresentationAppointment ..> RepresentationDentist: "<<use>>"
 
 ' Authentication path
 DentistBookingService ..> ResourceAuthentication:"/auth\n<<Path>>"
-ResourceAuthentication ..> ResourceLogin:"/register\n<<Path>>"
+ResourceAuthentication ..> ResourceRegister:"/register\n<<Path>>"
 ResourceAuthentication ..> ResourceLogin:"/login\n<<Path>>"
 ResourceAuthentication ..> ResourceMe:"/me\n<<Path>>"
 ResourceAuthentication ..> ResourceLogout:"/logout\n<<Path>>"
 ResourceLogin ..> RepresentationUser: "<<use>>"
 ResourceRegister ..> RepresentationUser: "<<use>>"
-ResourceLogout ..> RepresentationUser: "<<use>>"
 ResourceMe ..> RepresentationUser: "<<use>>"
 
 @enduml
